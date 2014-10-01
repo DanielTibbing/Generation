@@ -10,29 +10,40 @@ namespace FFCG.Calc.Kata
     public class StringCalculator
     {
         private const int DefaultValue = 0;
+        private const char DefaultDelimiter = ',';
 
         internal object Add(string numbers)
         {
-            numbers = numbers.Replace('\n', ',');
-            if (numbers.Equals(""))
+            if (StringIsEmpty(numbers))
             {
                 return DefaultValue;   
             }
-            if (numbers.Contains(","))
-            {
-                return AddNumbers(numbers);
-
-            }
-            else
+            if (numbers.Length.Equals(1))
             {
                 return Int32.Parse(numbers);
             }
+            if (StringHasModifiedDelimiter(numbers))
+            {
+                numbers = numbers.Substring(4).Replace(numbers[2], DefaultDelimiter);
+            }
+            numbers = numbers.Replace('\n', DefaultDelimiter);
+             return AddNumbers(numbers);
+        }
+
+        private static bool StringHasModifiedDelimiter(string numbers)
+        {
+            return numbers.Substring(0, 2).Equals("//");
+        }
+
+        private static bool StringIsEmpty(string numbers)
+        {
+            return numbers.Equals("");
         }
 
         internal int AddNumbers(string numbers)
         {
             int result = DefaultValue;
-           string[]allNumbers = numbers.Split(',');
+            string[] allNumbers = numbers.Split(DefaultDelimiter);
             foreach (string number in allNumbers)
             {
                 result += Int32.Parse(number);
