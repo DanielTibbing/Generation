@@ -11,7 +11,16 @@ namespace FFCG.WordReverser
     {
         internal object ReverseWord(string text)
         {
-            return text;
+            string[] textArray = text.Split(' ');
+            if (textArray.Length==1)
+            {
+                return text;
+
+            }
+            else
+            {
+                return textArray[1] + ' ' + textArray[0];
+            }
         }
     }
 
@@ -19,6 +28,7 @@ namespace FFCG.WordReverser
     public class WordReverserTest
     {
         [TestCase("hello", "hello")]
+        [TestCase("", "")]
         public void ReverseWordOrder_WithOneWord_ReturnsTheWord(string text, string expected)
         {
             ArrangeActAssert(text,expected);
