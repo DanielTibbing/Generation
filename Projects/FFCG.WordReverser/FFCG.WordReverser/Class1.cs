@@ -40,6 +40,12 @@ namespace FFCG.WordReverser
             ArrangeActAssert(text, expected);
         }
 
+        [TestCase("hello glorious world", "world glorious hello")]
+        public void ReverseWordOrder_WithUnkownAmountOfWords_ReturnsTheWordsInReversedOrder(string text, string expected)
+        {
+            ArrangeActAssert(text, expected);
+        }
+
         private static void ArrangeActAssert(string text, string expected)
         {
             var wordReverser = new WordReverser();
