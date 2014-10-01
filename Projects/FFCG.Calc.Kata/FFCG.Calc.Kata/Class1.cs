@@ -24,10 +24,16 @@ namespace FFCG.Calc.Kata
             }
             if (StringHasModifiedDelimiter(numbers))
             {
-                numbers = numbers.Substring(4).Replace(numbers[2], DefaultDelimiter);
+                numbers = ReplaceModifiedDelimiterWithDefaultDelimiter(numbers);
             }
             numbers = numbers.Replace('\n', DefaultDelimiter);
              return AddNumbers(numbers);
+        }
+
+        private static string ReplaceModifiedDelimiterWithDefaultDelimiter(string numbers)
+        {
+            numbers = numbers.Substring(4).Replace(numbers[2], DefaultDelimiter);
+            return numbers;
         }
 
         private static bool StringHasModifiedDelimiter(string numbers)
@@ -61,34 +67,41 @@ namespace FFCG.Calc.Kata
             ArrangeActAssert("",0);
         }
 
-        [Test]
-        public void Add_WithOneNumberInString_ReturnsNumber()
+        [TestCase("1", 1)]
+        [TestCase("0", 0)]
+        public void Add_WithOneNumberInString_ReturnsNumber(string numbers, int expected)
         {
-            ArrangeActAssert("1", 1);
+            ArrangeActAssert(numbers,expected);
         }
 
-        [Test]
-        public void Add_WithTwoNumbersInString_ReturnsNumberAddedTogether()
+        [TestCase("1,2", 3)]
+        [TestCase("1,0", 1)]
+        public void Add_WithTwoNumbersInString_ReturnsNumberAddedTogether(string numbers, int expected)
         {
             ArrangeActAssert("1,2", 3);
         }
 
-        [Test]
-        public void Add_WithUnkownNumbersInString_ReturnsNumberAddedTogether()
+        [TestCase("1,2,3,5", 11)]
+        [TestCase("1,2,3", 6)]
+        public void Add_WithUnkownNumbersInString_ReturnsNumberAddedTogether(string numbers, int expected)
         {
-            ArrangeActAssert("1,2,3", 6);
+            ArrangeActAssert(numbers, expected);
         }
 
-        [Test]
-        public void Add_WithUnkownNumbersInStringAndAllowsNewLine_ReturnsNumberAddedTogether()
+        [TestCase("1\n2\n3,4", 10)]
+        [TestCase("1,2\n3", 6)]
+        public void Add_WithUnkownNumbersInStringAndAllowsNewLine_ReturnsNumberAddedTogether(string numbers, int expected)
         {
-            ArrangeActAssert("1,2\n3", 6);
+            ArrangeActAssert(numbers, expected);
         }
 
-        [Test]
-        public void Add_WithUnkownNumbersInStringAndAllowsAnyDelimiter_ReturnsNumberAddedTogether()
+        [TestCase("//+\n1+2+3", 6)]
+        [TestCase("//-\n1-2-3", 6)]
+        [TestCase("//.\n1.2.3", 6)]
+        [TestCase("//_\n1_2_3", 6)]
+        public void Add_WithUnkownNumbersInStringAndAllowsAnyDelimiter_ReturnsNumberAddedTogether(string numbers,int expected)
         {
-            ArrangeActAssert("//+\n1+2+3", 6);
+            ArrangeActAssert(numbers, expected);
         }
         private static void ArrangeActAssert(string numbers, int expected)
         {
