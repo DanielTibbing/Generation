@@ -1,0 +1,7 @@
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\bin\Debug\FFCG.Calc.Kata.dll
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\bin\Debug\FFCG.Calc.Kata.pdb
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\bin\Debug\nunit.framework.dll
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\bin\Debug\nunit.framework.xml
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\obj\Debug\FFCG.Calc.Kata.csprojResolveAssemblyReference.cache
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\obj\Debug\FFCG.Calc.Kata.dll
+c:\users\daniel\documents\visual studio 2013\Projects\FFCG.Calc.Kata\FFCG.Calc.Kata\obj\Debug\FFCG.Calc.Kata.pdb
