@@ -11,7 +11,7 @@ namespace FFCG.WordReverser
     {
         public object ReverseWord(string text)
         {
-            throw new NotImplementedException();
+            return text;
         }
     }
 
