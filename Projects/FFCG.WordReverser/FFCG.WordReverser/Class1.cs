@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,15 @@ namespace FFCG.WordReverser
             {
                 return text;
 
-            }
-            else
+            } Debug.Print(textArray.ToString());
+            string reversedtext = "";
+            string[] reversedStringArray = textArray.Reverse().ToArray();
+
+            for (int i = 0; i<textArray.Length;i++)
             {
-                return textArray[1] + ' ' + textArray[0];
+                reversedtext += reversedStringArray[i]+" ";
             }
+            return reversedtext.Substring(0,reversedtext.Length-1);
         }
     }
 
