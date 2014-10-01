@@ -1,0 +1,7 @@
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\FFCG.WordReverser.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\FFCG.WordReverser.pdb
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\nunit.framework.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\bin\Debug\nunit.framework.xml
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.WordReverser\FFCG.WordReverser\obj\Debug\FFCG.WordReverser.pdb

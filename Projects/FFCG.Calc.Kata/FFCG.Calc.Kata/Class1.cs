@@ -18,10 +18,10 @@ namespace FFCG.Calc.Kata
             {
                 return DefaultValue;   
             }
-            if (numbers.Length.Equals(1))
+            /*if (numbers.Length.Equals(1))
             {
                 return Int32.Parse(numbers);
-            }
+            }*/
             if (StringHasModifiedDelimiter(numbers))
             {
                 numbers = ReplaceModifiedDelimiterWithDefaultDelimiter(numbers);
@@ -38,7 +38,12 @@ namespace FFCG.Calc.Kata
 
         private static bool StringHasModifiedDelimiter(string numbers)
         {
-            return numbers.Substring(0, 2).Equals("//");
+            if (numbers.Length>1)
+            {
+                return numbers.Substring(0, 2).Equals("//");
+            }
+            return false;
+
         }
 
         private static bool StringIsEmpty(string numbers)
@@ -67,7 +72,7 @@ namespace FFCG.Calc.Kata
             ArrangeActAssert("",0);
         }
 
-        [TestCase("1", 1)]
+        [TestCase("11", 11)]
         [TestCase("0", 0)]
         public void Add_WithOneNumberInString_ReturnsNumber(string numbers, int expected)
         {
@@ -78,10 +83,10 @@ namespace FFCG.Calc.Kata
         [TestCase("1,0", 1)]
         public void Add_WithTwoNumbersInString_ReturnsNumberAddedTogether(string numbers, int expected)
         {
-            ArrangeActAssert("1,2", 3);
+            ArrangeActAssert(numbers, expected);
         }
 
-        [TestCase("1,2,3,5", 11)]
+        [TestCase("1,2,23,5", 31)]
         [TestCase("1,2,3", 6)]
         public void Add_WithUnkownNumbersInString_ReturnsNumberAddedTogether(string numbers, int expected)
         {
@@ -103,6 +108,7 @@ namespace FFCG.Calc.Kata
         {
             ArrangeActAssert(numbers, expected);
         }
+
         private static void ArrangeActAssert(string numbers, int expected)
         {
             var calculator = new StringCalculator();
