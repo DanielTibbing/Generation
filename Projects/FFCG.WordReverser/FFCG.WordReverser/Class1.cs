@@ -9,7 +9,7 @@ namespace FFCG.WordReverser
 {
     public class WordReverser
     {
-        public object ReverseWord(string text)
+        internal object ReverseWord(string text)
         {
             return text;
         }
@@ -22,6 +22,12 @@ namespace FFCG.WordReverser
         public void ReverseWordOrder_WithOneWord_ReturnsTheWord(string text, string expected)
         {
             ArrangeActAssert(text,expected);
+        }
+
+        [TestCase("hello world", "world hello")]
+        public void ReverseWordOrder_WithTwoWords_ReturnsTheWordsInReversedOrder(string text, string expected)
+        {
+            ArrangeActAssert(text, expected);
         }
 
         private static void ArrangeActAssert(string text, string expected)
