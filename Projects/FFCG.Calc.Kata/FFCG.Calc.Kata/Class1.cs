@@ -73,6 +73,12 @@ namespace FFCG.Calc.Kata
         {
             ArrangeActAssert("1,2\n3", 6);
         }
+
+        [Test]
+        public void Add_WithUnkownNumbersInStringAndAllowsAnyDelimiter_ReturnsNumberAddedTogether()
+        {
+            ArrangeActAssert("//+\n1+2+3", 6);
+        }
         private static void ArrangeActAssert(string numbers, int expected)
         {
             var calculator = new StringCalculator();
