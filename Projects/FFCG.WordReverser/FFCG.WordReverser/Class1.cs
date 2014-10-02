@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace FFCG.WordReverser
@@ -17,21 +13,20 @@ namespace FFCG.WordReverser
             if (TextOnlyContainsOneWord(textArray))
             {
                 return text;
-
             }
             return ReverseTextFromArray(textArray);
         }
 
         private static bool TextOnlyContainsOneWord(string[] textArray)
         {
-            return textArray.Length==1;
+            return textArray.Length == 1;
         }
 
         private static object ReverseTextFromArray(string[] textArray)
         {
-            var delimitersAndPositions = RemoveDelimitersAndKeepTheirPositions(textArray);
-            var reversedStringArray = ReverseTextArray(textArray);
-            
+            List<Tuple<int, string>> delimitersAndPositions = RemoveDelimitersAndKeepTheirPositions(textArray);
+            string[] reversedStringArray = ReverseTextArray(textArray);
+
             AddTheDelimitersAgain(delimitersAndPositions, reversedStringArray);
             return CreateReversedStringFromTextArrayWithSpaceBetweenWords(reversedStringArray);
         }
@@ -59,12 +54,13 @@ namespace FFCG.WordReverser
             return reversedtext;
         }
 
-        private static void AddTheDelimitersAgain(List<Tuple<int, string>> delimitersAndPositions, string[] reversedStringArray)
+        private static void AddTheDelimitersAgain(List<Tuple<int, string>> delimitersAndPositions,
+            string[] reversedStringArray)
         {
-            foreach (Tuple<int, string> currentDelimiter in delimitersAndPositions)
+            foreach (var currentDelimiter in delimitersAndPositions)
             {
                 reversedStringArray[currentDelimiter.Item1] = reversedStringArray[currentDelimiter.Item1] +
-                                                                  currentDelimiter.Item2;
+                                                              currentDelimiter.Item2;
             }
         }
 
@@ -85,9 +81,14 @@ namespace FFCG.WordReverser
         private static void SaveDelimiterTypeAndPosition(string[] textArray, int i, string word,
             List<Tuple<int, string>> delimitersAndPositions)
         {
-            Tuple<int, string> currentDelimiter = new Tuple<int, string>(i, word.Last().ToString());
+            var currentDelimiter = new Tuple<int, string>(i, word.Last().ToString());
             delimitersAndPositions.Add(currentDelimiter);
-            textArray[i] = word.Substring(0, word.Length - 1);
+            RemoveCurrentDelimiter(textArray, i);
+        }
+
+        private static void RemoveCurrentDelimiter(string[] textArray, int i)
+        {
+            textArray[i] = textArray[i].Substring(0, textArray[i].Length - 1);
         }
 
         private static string[] ReverseTextArray(string[] textArray)
@@ -98,7 +99,7 @@ namespace FFCG.WordReverser
 
         private static bool ContainsDelimiter(string word)
         {
-            return word.Contains("!")||word.Contains("?")||word.Contains(",")||word.Contains(".");
+            return word.Contains("!") || word.Contains("?") || word.Contains(",") || word.Contains(".");
         }
     }
 
@@ -109,7 +110,7 @@ namespace FFCG.WordReverser
         [TestCase("", "")]
         public void ReverseWordOrder_WithOneWord_ReturnsTheWord(string text, string expected)
         {
-            ArrangeActAssert(text,expected);
+            ArrangeActAssert(text, expected);
         }
 
         [TestCase("hello world", "world hello")]
@@ -126,7 +127,8 @@ namespace FFCG.WordReverser
 
         [TestCase("hello glorious world!", "world glorious hello!")]
         [TestCase("Hej min kära mor. Ät banan, äpple och päron!", "päron och äpple banan. Ät mor, kära min Hej!")]
-        public void ReverseWordOrder_WithUnkownAmountOfWordsAndDelimitors_ReturnsTheWordsInReversedOrder(string text, string expected)
+        public void ReverseWordOrder_WithUnkownAmountOfWordsAndDelimitors_ReturnsTheWordsInReversedOrder(string text,
+            string expected)
         {
             ArrangeActAssert(text, expected);
         }
@@ -135,9 +137,8 @@ namespace FFCG.WordReverser
         {
             var wordReverser = new WordReverser();
 
-            var result = wordReverser.ReverseWord(text);
+            object result = wordReverser.ReverseWord(text);
             Assert.AreEqual(expected, result);
         }
-
     }
 }
