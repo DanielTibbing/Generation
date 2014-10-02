@@ -29,8 +29,9 @@ namespace FFCG.WordReverser
 
         private static object ReverseTextFromArray(string[] textArray)
         {
+            var delimitersAndPositions = RemoveDelimitersAndKeepTheirPositions(textArray);
             var reversedStringArray = ReverseTextArray(textArray);
-            var delimitersAndPositions = RemoveDelimitersAndKeepTheirPositions(textArray, reversedStringArray);
+            
             AddTheDelimitersAgain(delimitersAndPositions, reversedStringArray);
             return CreateReversedStringFromTextArrayWithSpaceBetweenWords(reversedStringArray);
         }
@@ -62,31 +63,31 @@ namespace FFCG.WordReverser
         {
             foreach (Tuple<int, string> currentDelimiter in delimitersAndPositions)
             {
-                reversedStringArray[currentDelimiter.Item1 - 1] = reversedStringArray[currentDelimiter.Item1 - 1] +
+                reversedStringArray[currentDelimiter.Item1] = reversedStringArray[currentDelimiter.Item1] +
                                                                   currentDelimiter.Item2;
             }
         }
 
-        private static List<Tuple<int, string>> RemoveDelimitersAndKeepTheirPositions(string[] textArray, string[] reversedStringArray)
+        private static List<Tuple<int, string>> RemoveDelimitersAndKeepTheirPositions(string[] textArray)
         {
             var delimitersAndPositions = new List<Tuple<int, string>>();
             for (int i = 0; i < textArray.Length; i++)
             {
-                string word = reversedStringArray[i];
+                string word = textArray[i];
                 if (ContainsDelimiter(word))
                 {
-                    SaveDelimiterTypeAndPosition(textArray, reversedStringArray, i, word, delimitersAndPositions);
+                    SaveDelimiterTypeAndPosition(textArray, i, word, delimitersAndPositions);
                 }
             }
             return delimitersAndPositions;
         }
 
-        private static void SaveDelimiterTypeAndPosition(string[] textArray, string[] reversedStringArray, int i, string word,
+        private static void SaveDelimiterTypeAndPosition(string[] textArray, int i, string word,
             List<Tuple<int, string>> delimitersAndPositions)
         {
-            Tuple<int, string> currentDelimiter = new Tuple<int, string>(textArray.Length - i, word.Last().ToString());
+            Tuple<int, string> currentDelimiter = new Tuple<int, string>(i, word.Last().ToString());
             delimitersAndPositions.Add(currentDelimiter);
-            reversedStringArray[i] = word.Substring(0, word.Length - 1);
+            textArray[i] = word.Substring(0, word.Length - 1);
         }
 
         private static string[] ReverseTextArray(string[] textArray)
