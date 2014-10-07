@@ -127,7 +127,7 @@ namespace FFCG.WordReverser
 
         [TestCase("hello glorious world!", "world glorious hello!")]
         [TestCase("Hej min kära mor. Ät banan, äpple och päron!", "päron och äpple banan. Ät mor, kära min Hej!")]
-        public void ReverseWordOrder_WithUnkownAmountOfWordsAndDelimitors_ReturnsTheWordsInReversedOrder(string text,
+        public void ReverseWordOrder_WithUnkownAmountOfWordsAndDelimitors_ReturnsTheWordsInReversedOrderAndDelimitorsInOriginalPosition(string text,
             string expected)
         {
             ArrangeActAssert(text, expected);

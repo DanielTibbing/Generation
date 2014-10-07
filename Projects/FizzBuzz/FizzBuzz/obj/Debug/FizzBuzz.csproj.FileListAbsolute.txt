@@ -1,0 +1,7 @@
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\bin\Debug\FizzBuzz.pdb
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\bin\Debug\nunit.framework.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\bin\Debug\nunit.framework.xml
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FizzBuzz\FizzBuzz\obj\Debug\FizzBuzz.pdb
