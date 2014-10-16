@@ -17,12 +17,25 @@ namespace FFCG.FourOfAKind.Tests
         public void CreateSuite_ReturnsValidSuite()
         {
             //ArrangeActAssert(text, expected);
-            Suite result = new Suite("Klöver");
+            var result = new Suite("Klöver");
 
             Assert.AreEqual("Klöver", result.GetSuite());
             result = new Suite("Spader");
 
             Assert.AreEqual("Spader", result.GetSuite());
+        }
+
+        [TestCase]
+        public void CreateCardWithNumberAndSuite_ReturnsThatCard()
+        {
+            //ArrangeActAssert(text, expected);
+            var result = new Card("Klöver",13);
+
+            Assert.AreEqual("Klöver", result.GetCard());
+
+            result = new Card("Spader",1);
+
+            Assert.AreEqual("Spader", result.GetCard());
         }
 
         [TestCase("hello world", "world hello")]
