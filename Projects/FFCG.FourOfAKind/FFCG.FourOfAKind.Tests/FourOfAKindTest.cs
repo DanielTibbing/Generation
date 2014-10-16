@@ -36,6 +36,8 @@ namespace FFCG.FourOfAKind.Tests
             result = new Card("Spader",1);
 
             Assert.AreEqual("Spader 1", result.PrintCard());
+            Assert.AreEqual("Spader 1", result.Suite.GetSuite() + " " + result.Number);
+
         }
 
         [TestCase]
