@@ -1,0 +1,9 @@
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\FFCG.FourOfAKind.Tests.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\FFCG.FourOfAKind.Tests.pdb
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\FFCG.FourOfAKind.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\FFCG.FourOfAKind.pdb
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\obj\Debug\FFCG.FourOfAKind.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\obj\Debug\FFCG.FourOfAKind.Tests.dll
+C:\Users\Daniel\Documents\GitHub\Generation\Projects\FFCG.FourOfAKind\FFCG.FourOfAKind.Tests\obj\Debug\FFCG.FourOfAKind.Tests.pdb

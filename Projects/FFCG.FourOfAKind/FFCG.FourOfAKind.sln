@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.FourOfAKind", "FFCG.FourOfAKind\FFCG.FourOfAKind.csproj", "{1CB8C9F4-26C3-4A3E-B315-3A73AE78E632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.FourOfAKind.Tests", "FFCG.FourOfAKind.Tests\FFCG.FourOfAKind.Tests.csproj", "{EFD77921-6E06-442B-A7D2-C589305A730A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CB8C9F4-26C3-4A3E-B315-3A73AE78E632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB8C9F4-26C3-4A3E-B315-3A73AE78E632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB8C9F4-26C3-4A3E-B315-3A73AE78E632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB8C9F4-26C3-4A3E-B315-3A73AE78E632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD77921-6E06-442B-A7D2-C589305A730A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD77921-6E06-442B-A7D2-C589305A730A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD77921-6E06-442B-A7D2-C589305A730A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD77921-6E06-442B-A7D2-C589305A730A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
