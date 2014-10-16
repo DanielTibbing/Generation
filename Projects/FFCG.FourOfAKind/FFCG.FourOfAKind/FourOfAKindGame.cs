@@ -29,7 +29,6 @@ namespace FFCG.FourOfAKind.Game
                 throw new Exception("No such Suite");
             }
         }
-
         public string GetSuite()
         {
             return _suite;
@@ -59,11 +58,16 @@ namespace FFCG.FourOfAKind.Game
             }
         }
 
-       /* public Card createCard(string suite, int number)
+        public Card(string suite, int number)
         {
-            //this.Number = number;
-            //_suite = new Suite(suite);
-        }*/
+            this.Number = number;
+            _suite = new Suite(suite);
+        }
+
+        public string PrintCard()
+        {
+            return _suite.GetSuite() + " " + _number;
+        }
 
 
     }

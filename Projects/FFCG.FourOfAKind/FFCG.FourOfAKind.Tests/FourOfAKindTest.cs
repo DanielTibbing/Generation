@@ -31,11 +31,11 @@ namespace FFCG.FourOfAKind.Tests
             //ArrangeActAssert(text, expected);
             var result = new Card("Klöver",13);
 
-            Assert.AreEqual("Klöver", result.GetCard());
+            Assert.AreEqual("Klöver 13", result.PrintCard());
 
             result = new Card("Spader",1);
 
-            Assert.AreEqual("Spader", result.GetCard());
+            Assert.AreEqual("Spader 1", result.PrintCard());
         }
 
         [TestCase("hello world", "world hello")]
