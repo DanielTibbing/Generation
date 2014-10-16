@@ -26,7 +26,7 @@ namespace FFCG.FourOfAKind.Tests
         }
 
         [TestCase]
-        public void CreateCardWithNumberAndSuite_ReturnsThatCard()
+        public void CreateCardWithNumberAndSuite_ReturnsStringRepresentationOfThatCard()
         {
             //ArrangeActAssert(text, expected);
             var result = new Card("Klöver",13);
@@ -37,6 +37,22 @@ namespace FFCG.FourOfAKind.Tests
 
             Assert.AreEqual("Spader 1", result.PrintCard());
         }
+
+        [TestCase]
+        public void CreateDeckWith13CardsOfSameSuite_ReturnsStringRepresentationOfThoseCards()
+        {
+            string expectedResult =
+                "Spader 1, Spader 2, Spader 3, Spader 4, Spader 5, Spader 6, Spader 7, Spader 8, Spader 9, Spader 10, Spader 11, Spader 12, Spader 13";
+            //ArrangeActAssert(text, expected);
+            var result = new Deck();
+
+            Assert.AreEqual(expectedResult, result.PrintSuite("Spader"));
+
+          //  result = new Card("Spader", 1);
+
+           // Assert.AreEqual("Spader 1", result.PrintCard());
+        }
+
 
         [TestCase("hello world", "world hello")]
         public void ReverseWordOrder_WithTwoWords_ReturnsTheWordsInReversedOrder(string text, string expected)
